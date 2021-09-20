@@ -21,9 +21,10 @@ const reducer = (state = initialState, { type, payload }) => {
         // pTodo[payload.check] = cTodo;
         // state = pTodo
         // return state;
-        return state.map((todo , index) =>
-          index !== payload.indexx ? todo : { ...todo, isDone: true }
+        return state.map((todo, index) =>
+          index !== payload.indexx ? todo : { ...todo, isDone: !todo.isDone }
         );
+
 
       default:
         return state;
